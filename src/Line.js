@@ -45,7 +45,6 @@ class Line extends Component {
           className={`${prefixCls}-line-trail`}
           d={pathString}
           strokeLinecap={trailLinecap}
-          strokeLinecap={strokeLinecap}
           stroke={trailColor}
           strokeWidth={trailWidth || strokeWidth}
           fillOpacity="0"

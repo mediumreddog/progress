@@ -14,6 +14,7 @@ class Line extends Component {
       style,
       trailColor,
       trailWidth,
+      trailLinecap,
       ...restProps,
     } = this.props;
 
@@ -28,7 +29,7 @@ class Line extends Component {
     const center = strokeWidth / 2;
     const right = 100 - (strokeWidth / 2);
     const pathString =
-          `M ${strokeLinecap === 'round' ? center : 0},${center}
+      `M ${strokeLinecap === 'round' ? center : 0},${center}
            L ${strokeLinecap === 'round' ? right : 100},${center}`;
     const viewBoxString = `0 0 100 ${strokeWidth}`;
 
@@ -43,6 +44,7 @@ class Line extends Component {
         <path
           className={`${prefixCls}-line-trail`}
           d={pathString}
+          strokeLinecap={trailLinecap}
           strokeLinecap={strokeLinecap}
           stroke={trailColor}
           strokeWidth={trailWidth || strokeWidth}

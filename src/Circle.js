@@ -51,7 +51,7 @@ class Circle extends Component {
   render() {
     const {
       prefixCls, strokeWidth, trailWidth, strokeColor, percent,
-      trailColor, strokeLinecap, style, className, ...restProps,
+      trailColor, trailLinecap, strokeLinecap, style, className, ...restProps,
     } = this.props;
     const { pathString, trailPathStyle, strokePathStyle } = this.getPathStyles();
     delete restProps.percent;
@@ -67,6 +67,7 @@ class Circle extends Component {
         <path
           className={`${prefixCls}-circle-trail`}
           d={pathString}
+          strokeLinecap={trailLinecap}
           stroke={trailColor}
           strokeWidth={trailWidth || strokeWidth}
           fillOpacity="0"
